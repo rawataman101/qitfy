@@ -6,8 +6,47 @@
   align-items: center;
 }
 
-.heroSection__img {
+.heroSection__section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 799px;
+  height: 212px;
+}
+
+.heroSection__sectionText {
+  width: 556px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.heroSection__sectionText1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  width: 473px;
+  height: 48px;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+}
+
+.heroSection__sectionText2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  width: 556px;
+  height: 48px;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 48px;
+}
+.heroSection__sectionImg {
+  width: 212px;
   height: 212px;
   object-fit: contain;
 }
