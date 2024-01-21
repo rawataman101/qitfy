@@ -20,9 +20,9 @@ body {
 }
 
 body {
-  font-family: "Poopins";
+  font-family: "Poppins";
   line-height: 1.5;
-  -web-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
   background-color: var(--color-black);
   overflow-x: hidden;
 }

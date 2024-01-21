@@ -1,0 +1,13 @@
+.heroSection {
+  width: 100vw;
+  height: 270px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroSection__img {
+  width: 799px;
+  height: 212px;
+  object-fit: contain;
+}
