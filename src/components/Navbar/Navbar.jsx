@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Navbar.module.css";
 import Logo from "../Logo/Logo";
 import Searchbar from "../Searchbar/Searchbar";
+import Button from "../Button/Button";
 
 function Navbar() {
   return (
@@ -10,6 +11,7 @@ function Navbar() {
         <Logo />
       </a>
       <Searchbar placeholder={"Search a album of your choice"} />
+      <Button children={"Give Feedback"} />
     </nav>
   );
 }
