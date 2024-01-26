@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.cardWrapper {
+  margin-top: 18px;
+  display: flex;
+}
+
+.wrapper {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+h3 {
+  color: var(--color-white);
+}
+
+.toggleText {
+  cursor: pointer;
+  color: var(--color-primary);
+}

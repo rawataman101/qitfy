@@ -2,10 +2,24 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import SongsSection from "./pages/SongsSection";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/songs",
+        element: <SongsSection />,
+      },
+    ],
+  },
+]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+root.render(<RouterProvider router={router}></RouterProvider>);

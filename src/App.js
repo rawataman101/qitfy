@@ -1,17 +1,30 @@
-import "./App.css";
+import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
-import HeroSection from "./components/HeroSection/HeroSection";
+import { Outlet } from "react-router";
+import { fetchTopAlbums, fetchNewAlbums, fetchSongs } from "./api/api";
 
 function App() {
+  //const [searchData, useSearchData] = useState();
+  const [data, setData] = useState({});
+  const generateData = (key, source) => {
+    source().then((data) => {
+      setData((preData) => {
+        return { ...preData, [key]: data };
+      });
+    });
+  };
+  useEffect(() => {
+    generateData("topAlbums", fetchTopAlbums);
+    generateData("newAlbums", fetchNewAlbums);
+    generateData("songs", fetchSongs);
+  }, []);
+
+  const { topAlbums = [], newAlbums = [], songs = [] } = data;
   return (
-    <div className="app">
+    <div>
       <Navbar />
-      <HeroSection
-        text1={"100 Thousand Songs, ad-free"}
-        text2={"Over thousands podcast episodes"}
-      />
+      <Outlet context={{ data: { topAlbums, newAlbums, songs } }} />
     </div>
   );
 }
-
 export default App;
