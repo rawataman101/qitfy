@@ -6,14 +6,12 @@
 
 .cardWrapper {
   margin-top: 18px;
-  display: flex;
 }
 
 .wrapper {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
-  justify-content: center;
 }
 
 h3 {

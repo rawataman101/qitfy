@@ -1,0 +1,67 @@
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px;
+}
+.wrapper__img {
+  width: 75px;
+  height: 82px;
+  object-fit: contain;
+}
+.body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.songName {
+  color: white;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.albumName {
+  color: white;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.playerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10%;
+}
+
+.playButton {
+  cursor: pointer;
+}
+
+.player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start,
+.end {
+  color: var(--color-white);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.footer {
+  box-shadow: 0px -2px 6px 0px #ffffff59;
+  background-color: var(--color-black);
+  position: sticky;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  z-index: 1;
+}

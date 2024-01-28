@@ -37,3 +37,12 @@ export const fetchFilters = async () => {
     console.log(e);
   }
 };
+
+export const fetchFaq = async () => {
+  try {
+    const response = await axios.get(`${BACKEND_ENDPOINT}/faq`);
+    return response.data;
+  } catch (e) {
+    console.log(e);
+  }
+};

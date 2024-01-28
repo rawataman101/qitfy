@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import { Outlet } from "react-router";
 import { fetchTopAlbums, fetchNewAlbums, fetchSongs } from "./api/api";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   //const [searchData, useSearchData] = useState();
@@ -24,6 +25,7 @@ function App() {
     <div>
       <Navbar />
       <Outlet context={{ data: { topAlbums, newAlbums, songs } }} />
+      <Footer />
     </div>
   );
 }

@@ -1,20 +1,20 @@
 import React from "react";
 import styles from "./Card.module.css";
 import { Tooltip, Chip } from "@mui/material";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+{
+  /* <Link to={`/songs/?albumId=${id}`}></Link>; */
+}
 
 function Card({ data, type }) {
-  const navigate = useNavigate();
-  const handleClick = () => {
-    navigate("/songs");
-  };
   const getCard = (type) => {
     switch (type) {
       case "album": {
         const { id, title, follows, image, slug, songs } = data;
         return (
           <Tooltip title={`${songs?.length} songs`} arrow placement="top">
-            <div className={styles.wrapper} onClick={handleClick}>
+            <div className={styles.wrapper}>
               <div className={styles.card}>
                 <img src={image} alt="song" loading="lazy" />
                 <div className={styles.banner}>
@@ -36,7 +36,7 @@ function Card({ data, type }) {
         const { id, title, artists, likes, image } = data;
         return (
           <Tooltip title={`${likes} songs`} arrow placement="top">
-            <div className={styles.wrapper} onClick={handleClick}>
+            <div className={styles.wrapper}>
               <div className={styles.card}>
                 <img src={image} alt="song" loading="lazy" />
                 <div className={styles.banner}>
