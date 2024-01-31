@@ -9,11 +9,12 @@ import { useNavigate, useOutletContext } from "react-router";
 
 function SongsSection() {
   const [album, setAlbum] = useState([]);
+  const [songs, setSongs] = useState([]);
   const [duration, setDuration] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
   const albumId = searchParams.get("albumId");
   const { data } = useOutletContext();
-  const { topAlbums, newAlbums, songs } = data;
+  const { topAlbums, newAlbums } = data;
   const history = useNavigate();
 
   const handleBack = () => {
@@ -36,8 +37,15 @@ function SongsSection() {
       console.log("error");
     }
   };
+  const getSongDuration = (dur) => {
+    const totalSeconds = Math.floor(dur / 1000);
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    return `${minutes}:${seconds}`;
+  };
   useEffect(() => {
     const albumDetail = getAlbumDetail();
+    setSongs(albumDetail.songs);
     const totalDuration = getSongsDuration(albumDetail);
     setAlbum(albumDetail);
     setDuration(totalDuration);
@@ -82,18 +90,26 @@ function SongsSection() {
             <p className={styles.textArtist}>Artist</p>
             <p className={styles.text}>Duration</p>
           </div>
-          <div className={styles.song}>
-            <div className={styles.song__song}>
-              <img
-                className={styles.song__img}
-                src="https://images.pexels.com/photos/1122626/pexels-photo-1122626.jpeg?auto=compress&cs=tinysrgb&fit=crop&h=1200&w=800"
-                alt="cover"
-              />
-              <p className={styles.textsong}>Song name</p>
-            </div>
-            <p className={styles.textsong}>Artist name</p>
-            <p className={styles.textsong}>1:59</p>
-          </div>
+          {songs.map((song) => {
+            return (
+              <div key={song.id}>
+                <div className={styles.song}>
+                  <div className={styles.song__song}>
+                    <img
+                      className={styles.song__img}
+                      src={song.image}
+                      alt="cover"
+                    />
+                    <p className={styles.textsong}>{song.title}</p>
+                  </div>
+                  <p className={styles.textsong__artist}>{song?.artists[0]}</p>
+                  <p className={styles.textsong}>
+                    {getSongDuration(song.durationInMs)}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

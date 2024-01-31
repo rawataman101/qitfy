@@ -31,6 +31,10 @@
 }
 
 .playerWrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0.75rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

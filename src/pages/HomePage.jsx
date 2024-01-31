@@ -4,7 +4,7 @@ import HeroSection from "../components/HeroSection/HeroSection";
 import { useOutletContext } from "react-router";
 import Section from "../components/Section/Section";
 import FaqSection from "../components/FaqSection/FaqSection";
-import { fetchFaq } from "../api/api";
+import { fetchFaq, fetchFilters } from "../api/api";
 
 function HomePage() {
   const { data } = useOutletContext();
@@ -22,7 +22,13 @@ function HomePage() {
       <HeroSection />
       <div className={styles.wrapper}>
         <Section title="Top Albums" data={topAlbums} type="album" />
-        <Section title="New Albums" data={newAlbums} type="album" />
+        <Section title="New Albums" data={newAlbums} type="album" />{" "}
+        <Section
+          title="Songs"
+          data={songs}
+          type="song"
+          filterSource={fetchFilters}
+        />
         <FaqSection data={faq} />
       </div>
     </div>
