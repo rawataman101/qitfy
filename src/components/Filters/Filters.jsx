@@ -54,7 +54,10 @@ export default function Filters({
         onChange={handleChange}
         aria-label="basic tabs example"
         TabIndicatorProps={{
-          style: { backgroundColor: "var(--color-primary)" },
+          style: {
+            color: "var(--color-white)",
+            backgroundColor: "var(--color-primary)",
+          },
         }}
       >
         {filters.map((ele, idx) => (
