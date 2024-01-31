@@ -55,7 +55,6 @@ export default function Filters({
         aria-label="basic tabs example"
         TabIndicatorProps={{
           style: {
-            color: "var(--color-white)",
             backgroundColor: "var(--color-primary)",
           },
         }}
