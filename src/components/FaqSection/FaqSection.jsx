@@ -6,7 +6,6 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 function FaqSection({ data }) {
-  console.log(data);
   return (
     <div className={styles.faqSection}>
       <h1 className={styles.faq}>FAQs</h1>

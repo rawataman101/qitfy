@@ -23,7 +23,7 @@ function App() {
   const { topAlbums = [], newAlbums = [], songs = [] } = data;
   return (
     <div>
-      <Navbar />
+      <Navbar searchData={[...topAlbums, ...newAlbums]} />
       <Outlet context={{ data: { topAlbums, newAlbums, songs } }} />
       <Footer />
     </div>

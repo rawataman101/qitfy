@@ -3,14 +3,15 @@ import styles from "./Navbar.module.css";
 import Logo from "../Logo/Logo";
 import Searchbar from "../Searchbar/Searchbar";
 import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 
-function Navbar() {
+function Navbar({ searchData }) {
   return (
     <nav className={styles.navbar}>
-      <a href="/">
+      <Link href="/">
         <Logo />
-      </a>
-      <Searchbar placeholder={"Search a album of your choice"} />
+      </Link>
+      <Searchbar searchData={searchData} />
       <Button children={"Give Feedback"} />
     </nav>
   );

@@ -1,4 +1,5 @@
 .searchbar {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,4 +22,52 @@
   border: 1px solid var(--color-black);
   border-left: none;
   cursor: pointer;
+}
+
+.wrapper {
+  padding: 15px;
+  position: absolute;
+  width: 773px;
+  max-height: 455px;
+  top: 73px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: auto;
+  z-index: 12;
+  background-color: var(--color-black);
+}
+
+.albumWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.albumWrapper img {
+  width: 66px;
+  height: 71px;
+  border-radius: 10px;
+  border: 5px solid #1d1d1d;
+}
+.album__text {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.album__text p {
+  color: var(--color-white);
+  height: 24px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0px;
+  text-align: right;
+  margin-left: 2px;
 }
